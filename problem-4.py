@@ -15,17 +15,16 @@ def reverse_string(number):
     return result
 
 for i in range(999):
-    i = i + 1000
-    for j in range(999):
-        j = j + 1000
-        
+    for j in range(999):        
         # find the product of i and j
         product = i * j
         reverse = reverse_string(product)
         
         if str(product) == reverse:
-            print("Reverse of " + str(product) + " is " + reverse)
+            print("Reverse of(" + str(i) + "*" + str(j) + ") " + str(product) + " is " + reverse)
             print("Palindrome found: " + str(product))
-            largest_palindrome = product
+
+            if product > largest_palindrome:
+                largest_palindrome = product
 
 print("Largest palindrome found is: " + str(largest_palindrome))
